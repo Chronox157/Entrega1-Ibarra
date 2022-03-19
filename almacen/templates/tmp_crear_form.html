@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<ul class="nav-item">
+    <br>
+<h1>Creando {{tipo}}</h1>
+</ul>
+
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+        {{form.as_table}}
+        </table>
+        <input type="submit">
+    </form>
+{% endblock content %}

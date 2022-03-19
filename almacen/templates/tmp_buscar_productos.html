@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %} 
+<ul class="nav-item">
+    <div>
+        <form action="" method="get">
+            {% csrf_token %}
+            <h1>Buscando producto</h1>
+            {{buscador.as_p}} 
+
+            <input type="submit" placeholder="Enviar">
+
+        </form>
+        <br>
+        {% if dato %}
+            {% for nombre in productos_buscados %}
+            
+                <li>
+                    <strong>{{nombre}}</strong>
+                    <ol>
+                        Precio de venta: {{nombre.precio_de_venta}}
+                    </ol>
+                </li>
+        
+            {% endfor %}
+        {% endif %}
+    </div>
+</ul>
+
+{% endblock content %}

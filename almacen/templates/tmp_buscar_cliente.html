@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %} 
+<ul class="nav-item">
+    <div>
+        <form action="" method="get">
+            {% csrf_token %}
+            <h1>Buscando cliente</h1>
+            {{buscador.as_p}} 
+
+            <input type="submit" placeholder="Enviar">
+
+        </form>
+        <br>
+        
+        {% if dato %}
+            {% for nombre in clientes_buscados %}
+                
+
+                <li>
+                    <strong>{{nombre}}, {{nombre.edad}}</strong> - {{nombre.celular}}
+                    <ol>
+                        Debe: ${{nombre.deuda}}
+                        <br>
+                        Reside en: {{nombre.direccion}}
+                        <br>
+                        Cedula: {{nombre.cedula}}
+                        <br>
+
+                    </ol>
+                </li>
+
+            {% endfor %}
+        {% endif %}
+    </div>
+</ul>
+{% endblock content %}

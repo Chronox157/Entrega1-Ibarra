@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+    <ul class="nav-item">
+        <h1>Crear</h1>
+        <strong>
+        <a class="nav-link" href={% url 'clientes_crear' %}>Cliente</a>
+        </strong>   
+        <strong>
+            <a class="nav-link" href={% url 'productos_crear' %}>Producto</a>
+        </strong>   
+        <strong>
+            <a class="nav-link" href={% url 'proveedores_crear' %}>Proveedor</a>
+        </strong>   
+    </ul>
+{% endblock content %}
