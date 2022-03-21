@@ -2,7 +2,7 @@ from django.urls import path
 from .views import inicio, clientes, clientes_crear, crear, proveedores, proveedores_crear, productos, productos_crear, buscar, clientes_buscar,productos_buscar,proveedores_buscar
 
 urlpatterns = [
-    path("index/", inicio, name="inicio"),
+    path("", inicio, name="inicio"),
     ##Crear
     path("crear/", crear, name="crear"),
 
